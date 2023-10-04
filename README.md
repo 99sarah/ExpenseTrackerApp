@@ -1,7 +1,5 @@
-# ExpenseTrackerApp
-## Assignment 1 - Mobile Applications
----
 
+# Assignment 1 - Expense Tracker App
 
 ### General
 This app is used to track expenses. The user can create new expenses, which are displayed in a list. The user can also delete and edit expenses. A bar chart shows how much money the user has spent proportionally in each category.
