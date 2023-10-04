@@ -13,6 +13,7 @@ class ExpenseItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        // opens ModalBottomSheet for the user to edit this specific expense
         showModalBottomSheet(
           useSafeArea: true,
           isScrollControlled: true,
@@ -40,7 +41,8 @@ class ExpenseItem extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                      '\$${expense.amount.toStringAsFixed(2)}'), //max 2 number behind the comma
+                    '\$${expense.amount.toStringAsFixed(2)}',
+                  ), //max 2 numbers behind the comma
                   const Spacer(),
                   Row(
                     children: [

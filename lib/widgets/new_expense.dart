@@ -8,7 +8,7 @@ import 'package:image_picker/image_picker.dart';
 class NewExpense extends StatefulWidget {
   ///constructor to create a new expense
   NewExpense({super.key, required this.onAddExpense})
-      : expense = Expense.empty();
+      : expense = Expense.empty(); //creates an empty Expense
 
   ///constructor to edit an existing expense
   const NewExpense.edit(
@@ -35,6 +35,7 @@ class _NewExpenseState extends State<NewExpense> {
   void initState() {
     super.initState();
     if (widget.expense.title.isNotEmpty) {
+      //sets values if it is an existing expense
       _titleController.text = widget.expense.title;
       _amountController.text = widget.expense.amount.toString();
       _selectedDate = widget.expense.date;
@@ -70,6 +71,7 @@ class _NewExpenseState extends State<NewExpense> {
   ///shows the dialog that some input is invalid
   void _showDialog() {
     if (Platform.isIOS) {
+      //to show IOS specific dialog
       showCupertinoDialog(
           context: context,
           builder: (ctx) => CupertinoAlertDialog(
@@ -114,15 +116,20 @@ class _NewExpenseState extends State<NewExpense> {
     final dateIsInvalid = _selectedDate == null;
 
     if (amountIsInvalid || titleIsInvalid || dateIsInvalid) {
+      //shows Invalid Input Dialog if any input is invalid
       _showDialog();
       return;
     }
+
+    //saves the final input in the expense attribtue
     widget.expense.title = _titleController.text;
     widget.expense.amount = enteredAmount;
     widget.expense.date = _selectedDate!;
     widget.expense.category = _selectedCategory;
     widget.expense.image = (_selectedImage) ?? widget.expense.image;
     widget.onAddExpense(widget.expense);
+
+    //closes the creating/editing sheet
     Navigator.pop(context);
   }
 
