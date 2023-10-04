@@ -1,16 +1,16 @@
-# expense_tracker
+# ExpenseTrackerApp
+## Assignment 1 - Mobile Applications
+---
 
-A new Flutter project.
 
-## Getting Started
+### General
+This app is used to track expenses. The user can create new expenses, which are displayed in a list. The user can also delete and edit expenses. A bar chart shows how much money the user has spent proportionally in each category.
 
-This project is a starting point for a Flutter application.
+### Create a new expense
+When an expense is created, a title and amount must be entered for each expense. The user must also select an associated date and assign the expense to one of four categories. Optionally, the user can add an image from the gallery, e.g. to digitally save the receipt of the expense.
 
-A few resources to get you started if this is your first Flutter project:
+### Delete an expense
+To delete an expense, the user must swipe the expense to the side in the list.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Edit an expense
+To edit an expense, the user can tap on the corresponding expense in the list. All fields that can also be edited when creating an expense can then be edited.
